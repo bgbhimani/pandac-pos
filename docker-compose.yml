@@ -29,7 +29,7 @@ services:
     environment:
       DATABASE_URL: postgresql://pandac_user:pandac_password@db:5432/pandac_pos
       REDIS_URL: redis://redis:6379/0
-      SECRET_KEY: 76f6e85501865313a48eefb22a00c1e82b7cf5e828114f85e44a49bc4db6874b
+      SECRET_KEY: ${SECRET_KEY}
     depends_on:
       - db
       - redis
@@ -45,7 +45,7 @@ services:
       REDIS_URL: redis://redis:6379/0
       CELERY_BROKER_URL: redis://redis:6379/0
       CELERY_RESULT_BACKEND: redis://redis:6379/0
-      SECRET_KEY: 76f6e85501865313a48eefb22a00c1e82b7cf5e828114f85e44a49bc4db6874b
+      SECRET_KEY: ${SECRET_KEY}
     depends_on:
       - db
       - redis
